@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="moment.js" type="text/javascript"></script>
+    <script src="moment-timezone-with-data.js" type="text/javascript"></script>
+</head>
+<body>
+
+<script>
+function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        var Y = date.getFullYear() + '-';
+        var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        var D = date.getDate() + ' ';
+        var h = date.getHours() + ':';
+        var m = date.getMinutes();
+        return Y+M+D+h+m;
+    }
+    var timeOri = timestampToTime(1541748180);
+
+    document.write("timeOri: " + timeOri + "<br />");
+
+    document.write(moment(1541748180*1000).format("YYYYMMDDHHmm") + "<br />");
+
+
+</script>
+
+</body>
+</html>
