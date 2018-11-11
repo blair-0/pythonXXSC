@@ -7,7 +7,8 @@
 <body>
 
 <script>
-    document.write(moment(1541748180*1000).format("YYYYMMDDHHmm") + "<br />");
+    document.write("origin time: " + moment(1541748180*1000).format("YYYY-MM-DD HH:mm") + "<br />");
+    document.write("origin time: " + moment(1541748180*1000).utc().format() + "<br />");
 
 
 </script>
